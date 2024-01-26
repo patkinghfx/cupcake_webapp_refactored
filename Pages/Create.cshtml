@@ -1,0 +1,40 @@
+﻿@page
+@model Cupcakes.Pages.CreateModel
+@{
+}
+
+<h1>Create A Cupcake</h1>
+<div class="w-50">
+    <form method="post" enctype="multipart/form-data">
+    
+        <div class="mb-3">
+            <label asp-for="FileUpload" class="form-label"></label><br />
+            <input asp-for="FileUpload" class="form-control"/>
+            <span asp-asp-validation-for="FileUpload" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Cupcake.Name" class="form-label"></label><br />
+            <input asp-for="Cupcake.Name" class="form-contorl" />
+            <span asp-validation-for="Cupcake.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Cupcake.Description" class="form-label"></label><br />
+            <input asp-for="Cupcake.Description" class="form-control" />
+            <span asp-validation-for="Cupcake.Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Cupcake.Price"></label><br />
+            <input asp-for="Cupcake.Price" class="form-control" />
+            <span asp-validation-for="Cupcake.Price" class="text-danger"></span>
+        </div>
+
+        <p>
+            <input type="submit" value="Submit" class="btn btn-primary" />&nbsp;&nbsp;
+            <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+
+        </p>
+    </form>
+</div>

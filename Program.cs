@@ -1,4 +1,4 @@
-namespace cupcake_webapp
+namespace Cupcakes
 {
     public class Program
     {

@@ -1,10 +1,47 @@
 ﻿@page
+@using Cupcakes.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1>Cupcakes</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-secondary">Create a Cupcake</a>
+</p>
+
+<div class="w-50">
+    <table class="table">
+        <thread>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thread>
+        <tbody>
+            @foreach(Cupcake cupcake in Model.cupcakes)
+            {
+                <tr>
+                    <td>
+                        <img src="/uploads/@cupcake.ImageFilename" class="img-fluid" />
+                    </td>
+                <td>
+                    @cupcake.Name
+                </td>
+                <td>
+                    @cupcake.Description
+                </td>
+                <td>
+                    @cupcake.Price
+                </td>
+                <td>
+                    <a asp-page="Delete" asp-route-id="@cupcake.CupcakeId">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
 </div>

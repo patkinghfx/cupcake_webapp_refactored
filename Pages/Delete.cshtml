@@ -1,0 +1,22 @@
+﻿@page
+@model Cupcakes.Pages.DeleteModel
+@{
+}
+
+<h1>Delete Cupcake</h1>
+
+<h2>Cast this Cupcake into the Void?</h2>
+
+<p>
+    <img src="/uploads/@Model.Cupcake.ImageFilename" class="img-fluid" />
+</p>
+
+<form method="post">
+    <input type="hidden" name="Cupcake.CupcakeId" value="@Model.Cupcake.CupcakeId" />
+
+    <p>
+        <input type="submit" value="Delete" class="btn btn-primary" />
+        <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+    </p>
+
+</form>
